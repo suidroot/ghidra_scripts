@@ -1,6 +1,10 @@
-# Malware XOR String decoder
-# @author: suidroot
+# Malware XOR String decoder for static keys
+# @author: @suidroot
 # @category: suidroot
+# @toolbar: xor.png
+# @menupath suidroot
+
+# TODO: Add suppot for longer keys
 
 from string import printable
 
@@ -71,6 +75,25 @@ def list_xor_convert_string(hex_list, key):
     dec_string = ''
     for i in hex_list:
         dec_string += chr(i ^ key)
+
+    # key_position_1 = 0
+    # key_position_2 = 0
+    # Key at: 0x1400293c4
+    # ASCII: aZIiQ
+    # keys = [0x62, 0x5a, 0x49, 0x69, 0x51]
+     
+    # print (len(string), len(keys))
+    # while key_position_1 < len(string):
+    #     if string[key_position_1] != 0x0:
+    #         decoded = string[key_position_1] ^ keys[key_position_2]
+    #         print (chr(decoded), end = "")
+ 
+    #         if key_position_2 < len(keys)-1:
+    #             key_position_2 += 1
+    #         else:
+    #             key_position_2 = 0
+    #     key_position_1 += 1
+
 
     return dec_string
 
